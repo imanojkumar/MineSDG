@@ -7,24 +7,46 @@
 calculate_water_efficiency(withdrawal_m3, discharge_m3, recycled_m3)
 }
 \arguments{
-\item{withdrawal_m3}{Numeric. Total water withdrawn from all sources in cubic meters.}
+\item{withdrawal_m3}{Numeric. Total water withdrawn from all sources (in cubic meters).
+Must be a non-negative number.}
 
-\item{discharge_m3}{Numeric. Total water discharged in cubic meters.}
+\item{discharge_m3}{Numeric. Total water discharged to all destinations (in cubic meters).
+Must be a non-negative number.}
 
-\item{recycled_m3}{Numeric. Total water recycled/reused in cubic meters.}
+\item{recycled_m3}{Numeric. Total water recycled or reused (in cubic meters).
+Must be a non-negative number.}
 }
 \value{
-A list containing:
-\itemize{
-\item \code{metric}: The name of the calculated metric.
-\item \code{net_consumption_m3}: Net water consumed (Withdrawal - Discharge).
-\item \code{recycling_rate_percent}: Percentage of total water use that is recycled.
+A named list containing:
+\describe{
+\item{metric}{Character string. "SDG 6.4 - Water Efficiency"}
+\item{net_consumption_m3}{Numeric. Net water consumed (Withdrawal - Discharge).}
+\item{recycling_rate_percent}{Numeric. Percentage of total water use that is recycled, rounded to 2 decimal places.}
 }
 }
 \description{
-This function calculates water use efficiency and recycling rates based on
-Global Reporting Initiative (GRI 303) standards.
+Computes water use efficiency and recycling rates in alignment with
+Global Reporting Initiative (GRI 303) standards and SDG Target 6.4.
+}
+\details{
+The function calculates the "Recycling Rate" as:
+\deqn{(recycled\_m3 / (withdrawal\_m3 + recycled\_m3)) * 100}
+
+And "Net Water Consumption" (GRI 303-5) as:
+\deqn{withdrawal\_m3 - discharge\_m3}
 }
 \examples{
-calculate_water_efficiency(withdrawal_m3 = 50000, discharge_m3 = 10000, recycled_m3 = 20000)
+# Standard mining operation example
+calculate_water_efficiency(
+  withdrawal_m3 = 50000,
+  discharge_m3 = 10000,
+  recycled_m3 = 20000
+)
+
+# Zero discharge example (Closed loop)
+calculate_water_efficiency(1000, 0, 500)
+
+# Edge case: No water used
+calculate_water_efficiency(0, 0, 0)
+
 }
