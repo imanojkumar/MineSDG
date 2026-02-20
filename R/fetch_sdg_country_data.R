@@ -77,6 +77,13 @@ fetch_sdg_country_data <- function(goal = NULL,
   }
 
   # -----------------------------
+  # Validate indicator (if provided)
+  # -----------------------------
+  if (!is.null(indicator)) {
+    validate_sdg_indicator(indicator, goal)
+  }
+
+  # -----------------------------
   # Build query
   # -----------------------------
   base_url <- "https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data"
