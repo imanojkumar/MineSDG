@@ -2,3 +2,4 @@
 
 export(calculate_land_restoration)
 export(calculate_water_efficiency)
+export(fetch_sdg_country_data)
