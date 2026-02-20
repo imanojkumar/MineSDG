@@ -2,7 +2,7 @@ Package: MineSDG
 Title: Mining Industry SDG Impact Calculator
 Version: 0.0.0.9000
 Authors@R: 
-    Person("Manoj", "Kumar", email = "emailmanojhere@gmail.com", role = c("aut", "cre"))
+    person("Manoj", "Kumar", email = "emailmanojhere@gmail.com", role = c("aut", "cre"))
 Description: Provides tools to calculate quantitative scores for Sustainable Development Goals (SDGs) specifically for the mining, minerals and metals sector.
 License: MIT + file LICENSE
 Encoding: UTF-8
