@@ -42,3 +42,5 @@
   : Calculate Land Restoration Rehabilitation Rate
 - [`calculate_water_efficiency()`](https://imanojkumar.github.io/MineSDG/reference/calculate_water_efficiency.md)
   : Calculate Water Use Efficiency (SDG 6.4)
+- [`generate_mining_risk_profile()`](https://imanojkumar.github.io/MineSDG/reference/generate_mining_risk_profile.md)
+  : Generate Mining SDG Risk Profile

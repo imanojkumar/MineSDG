@@ -54,3 +54,4 @@ reference:
       - map_sdg_to_mining_domain
       - calculate_land_restoration
       - calculate_water_efficiency
+      - generate_mining_risk_profile

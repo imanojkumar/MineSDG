@@ -254,6 +254,13 @@ evaluation.
 
 ------------------------------------------------------------------------
 
+### Mining Risk Engine
+
+``` r
+dt <- fetch_sdg_country_data(indicator = "15.3.1", country = "IND")
+generate_mining_risk_profile(dt, indicator = "15.3.1")
+```
+
 ------------------------------------------------------------------------
 
 ### Summary
