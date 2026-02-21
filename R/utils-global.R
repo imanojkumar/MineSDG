@@ -1,3 +1,20 @@
 utils::globalVariables(c(
-  ".N", "country", "year", "value"
+  ".",
+  ":=",
+  ".N",
+  ".BY",
+  "country",
+  "year",
+  "value",
+  "indicator",
+  "benchmark_value",
+  "deviation",
+  "percent_gap",
+  "z_score",
+  "rank",
+  "performance_category",
+  "trend_direction",
+  "absolute_change",
+  "percent_change",
+  "cagr"
 ))
