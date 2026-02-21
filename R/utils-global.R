@@ -16,5 +16,15 @@ utils::globalVariables(c(
   "trend_direction",
   "absolute_change",
   "percent_change",
-  "cagr"
+  "cagr",
+  "mean_value",
+  "sd_value",
+  "coefficient_of_variation",
+  "volatility_index",
+  "stability_category",
+  "value_base",
+  "value_final",
+  "growth_rate",
+  "beta",
+  "convergence_type"
 ))

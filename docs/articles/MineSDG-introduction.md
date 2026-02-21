@@ -1,4 +1,6 @@
-# MineSDG-introduction
+# MineSDG - Mining Impact Tracking & Reporting
+
+------------------------------------------------------------------------
 
 ## Introduction
 
@@ -12,6 +14,8 @@ The package includes:
 - Country-level data retrieval
 - Optional data persistence
 - Session-level metadata caching
+
+------------------------------------------------------------------------
 
 ## Listing SDG Indicators
 
@@ -27,6 +31,8 @@ To list indicators under a specific goal:
 list_sdg_indicators(goal = 15)
 ```
 
+------------------------------------------------------------------------
+
 ## Validating Indicators
 
 ``` r
@@ -38,6 +44,8 @@ Goal consistency validation:
 ``` r
 validate_sdg_indicator("15.3.1", goal = 15)
 ```
+
+------------------------------------------------------------------------
 
 ## Fetching Data for a Single Indicator
 
@@ -51,6 +59,8 @@ dt <- fetch_sdg_country_data(
 head(dt)
 ```
 
+------------------------------------------------------------------------
+
 ## Fetching All Indicators Under a Goal
 
 ``` r
@@ -62,6 +72,8 @@ dt_goal <- fetch_sdg_country_data(
 
 head(dt_goal)
 ```
+
+------------------------------------------------------------------------
 
 ## Saving Data
 
@@ -76,4 +88,136 @@ fetch_sdg_country_data(
 
 Files are saved under:
 
-`./data/sdg_downloads/`
+``` r
+./data/sdg_downloads/
+```
+
+------------------------------------------------------------------------
+
+## Advanced Analytics
+
+MineSDG 0.2.0 expands the package beyond data retrieval into a complete
+SDG analytics engine.
+
+The following analytical layers are now available:
+
+- Trend analysis
+- Stability and volatility diagnostics
+- Benchmark comparison
+- Convergence testing
+- Executive-ready narrative generation
+- Visualization utilities
+
+------------------------------------------------------------------------
+
+## Trend Analysis
+
+``` r
+trend <- analyze_sdg_trend(dt)
+trend
+```
+
+This function computes:
+
+- Absolute change
+- Percent change
+- CAGR (Compound Annual Growth Rate)
+- Linear trend slope
+- Trend direction (Increasing / Decreasing / Stable)
+
+------------------------------------------------------------------------
+
+## Stability & Volatility Diagnostics
+
+``` r
+stability <- compute_sdg_stability(dt)
+stability
+```
+
+Includes:
+
+- Standard deviation
+- Coefficient of variation
+- Volatility index
+- Stability classification
+
+These metrics are especially useful for ESG risk evaluation and
+operational performance diagnostics.
+
+------------------------------------------------------------------------
+
+## Benchmarking Performance
+
+``` r
+benchmark <- benchmark_sdg_performance(dt)
+benchmark
+```
+
+Outputs:
+
+- Deviation from benchmark
+- Percent gap
+- Z-score
+- Ranking
+- Performance category (Strong / Moderate / Weak)
+
+------------------------------------------------------------------------
+
+## Convergence Analysis
+
+``` r
+convergence <- analyze_sdg_convergence(dt)
+convergence
+```
+
+This tests beta-convergence across countries, helping assess whether
+lagging countries are catching up in SDG performance.
+
+------------------------------------------------------------------------
+
+## Executive Summary Generation
+
+``` r
+summary_text <- generate_sdg_executive_summary(trend, benchmark)
+cat(summary_text)
+```
+
+Produces narrative, board-ready interpretation suitable for:
+
+- ESG reports
+- Policy briefs
+- Academic summaries
+- Strategic reviews
+
+------------------------------------------------------------------------
+
+## Visualization Layer
+
+MineSDG includes publication-ready visualization tools:
+
+``` r
+plot_sdg_trend(dt)
+plot_sdg_benchmark(benchmark)
+plot_sdg_volatility(stability)
+plot_sdg_convergence(dt)
+```
+
+All plots use ggplot2 (optional dependency) and follow minimal,
+publication-ready styling.
+
+------------------------------------------------------------------------
+
+## Summary
+
+MineSDG now supports a full analytical workflow:
+
+Data Retrieval → Trend Diagnostics → Stability Analysis → Benchmarking →
+Convergence Testing → Executive Reporting → Visualization
+
+This positions MineSDG as a research-grade SDG analytics framework
+suitable for:
+
+- ESG reporting
+- Policy evaluation
+- Academic research
+- Mining-sector sustainability assessment

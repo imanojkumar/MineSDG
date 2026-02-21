@@ -1,6 +1,6 @@
 Package: MineSDG
 Title: Mining Industry SDG Impact Calculator
-Version: 0.1.0.9000
+Version: 0.1.0
 Authors@R: 
     person("Manoj", "Kumar", email = "emailmanojhere@gmail.com", role = c("aut", "cre"))
 Description: Provides tools to calculate quantitative scores for Sustainable Development Goals (SDGs) specifically for the mining, minerals and metals sector.
@@ -16,6 +16,7 @@ Imports:
 Suggests:
     testthat (>= 3.0.0),
     knitr,
-    rmarkdown
+    rmarkdown,
+    ggplot2 (>= 3.4.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3

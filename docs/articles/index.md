@@ -2,4 +2,5 @@
 
 ### All vignettes
 
-- [MineSDG-introduction](https://imanojkumar.github.io/MineSDG/articles/MineSDG-introduction.md):
+- [MineSDG - Mining Impact Tracking &
+  Reporting](https://imanojkumar.github.io/MineSDG/articles/MineSDG-introduction.md):
