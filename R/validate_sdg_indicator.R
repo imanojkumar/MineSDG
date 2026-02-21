@@ -5,6 +5,8 @@
 #'
 #' Optionally verifies consistency between indicator and goal.
 #'
+#' Uses internally cached metadata via `get_sdg_metadata()`.
+#'
 #' @param indicator Character. SDG indicator code (e.g., "15.3.1").
 #' @param goal Numeric (1–17). Optional SDG goal number for consistency check.
 #'
@@ -31,54 +33,28 @@ validate_sdg_indicator <- function(indicator, goal = NULL) {
   }
 
   if (!is.null(goal)) {
-    if (!is.numeric(goal) || goal < 1 || goal > 17) {
-      stop("`goal` must be numeric between 1 and 17.", call. = FALSE)
+    if (!is.numeric(goal) || length(goal) != 1 ||
+        goal < 1 || goal > 17) {
+      stop("`goal` must be numeric between 1 and 17.",
+           call. = FALSE)
     }
   }
 
   # -----------------------------
-  # Fetch metadata from UN API
+  # Retrieve cached metadata
   # -----------------------------
-  base_url <- "https://unstats.un.org/SDGAPI/v1/sdg/Indicator/List"
-
-  response <- tryCatch({
-    httr2::request(base_url) |>
-      httr2::req_perform()
-  }, error = function(e) {
-    stop(
-      paste0(
-        "Unable to retrieve SDG indicator metadata.\n",
-        "Check internet connection or UN API availability.\n\n",
-        "Technical message:\n", e$message
-      ),
-      call. = FALSE
-    )
-  })
-
-  parsed <- httr2::resp_body_json(response)
-
-  if (!is.list(parsed)) {
-    stop("Unexpected API response structure.", call. = FALSE)
-  }
+  metadata_dt <- get_sdg_metadata()
 
   # -----------------------------
-  # Locate the indicator entry
+  # Check indicator existence
   # -----------------------------
-  indicator_entry <- NULL
+  indicator_entry <- metadata_dt[indicator == !!indicator]
 
-  for (item in parsed) {
-    if (!is.null(item$code) && item$code == indicator) {
-      indicator_entry <- item
-      break
-    }
-  }
-
-  if (is.null(indicator_entry)) {
+  if (nrow(indicator_entry) == 0) {
     stop(
       paste0(
         "Invalid SDG indicator: ", indicator, "\n\n",
-        "Please verify indicator code from:\n",
-        "https://unstats.un.org/sdgs/indicators/database/"
+        "Use list_sdg_indicators() to explore valid indicators."
       ),
       call. = FALSE
     )
@@ -89,9 +65,9 @@ validate_sdg_indicator <- function(indicator, goal = NULL) {
   # -----------------------------
   if (!is.null(goal)) {
 
-    indicator_goal <- as.numeric(indicator_entry$goal)
+    indicator_goal <- indicator_entry$goal[1]
 
-    if (indicator_goal != as.numeric(goal)) {
+    if (indicator_goal != goal) {
       stop(
         paste0(
           "Indicator ", indicator,

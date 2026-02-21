@@ -32,29 +32,19 @@ Default: "./data/sdg_downloads/".}
 Default c("csv", "rds").}
 }
 \value{
-A \code{data.table} containing SDG indicator data.
+A data.table containing SDG indicator data.
 }
 \description{
 Retrieves Sustainable Development Goal (SDG) indicator data from the
 official United Nations SDG API.
 }
 \details{
-The function supports filtering by goal, indicator code, ISO3 country code,
-and year range. Data is returned as a high-performance \code{data.table}.
-
-Optionally, the fetched data can be saved to disk in CSV and/or RDS format.
-
-API Source:
-\url{https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data}
-}
-\examples{
-\dontrun{
-fetch_sdg_country_data(
-  indicator = "15.3.1",
-  country = "IND",
-  year_range = c(2015, 2022),
-  save = TRUE
-)
+At least one of \code{goal} or \code{indicator} must be provided.
+\itemize{
+\item If \code{indicator} is supplied → fetch that specific indicator.
+\item If only \code{goal} is supplied → fetch all indicators under that goal.
+\item If both are supplied → consistency is validated.
 }
 
+\code{country} and \code{year_range} act as filters.
 }

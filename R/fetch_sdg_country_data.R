@@ -3,13 +3,13 @@
 #' Retrieves Sustainable Development Goal (SDG) indicator data from the
 #' official United Nations SDG API.
 #'
-#' The function supports filtering by goal, indicator code, ISO3 country code,
-#' and year range. Data is returned as a high-performance \code{data.table}.
+#' At least one of `goal` or `indicator` must be provided.
 #'
-#' Optionally, the fetched data can be saved to disk in CSV and/or RDS format.
+#' - If `indicator` is supplied → fetch that specific indicator.
+#' - If only `goal` is supplied → fetch all indicators under that goal.
+#' - If both are supplied → consistency is validated.
 #'
-#' API Source:
-#' \url{https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data}
+#' `country` and `year_range` act as filters.
 #'
 #' @param goal Numeric (1-17). Optional SDG goal number.
 #' @param indicator Character. SDG indicator code (e.g., "15.3.1").
@@ -21,17 +21,7 @@
 #' @param formats Character vector. Any combination of "csv", "rds".
 #'   Default c("csv", "rds").
 #'
-#' @return A \code{data.table} containing SDG indicator data.
-#'
-#' @examples
-#' \dontrun{
-#' fetch_sdg_country_data(
-#'   indicator = "15.3.1",
-#'   country = "IND",
-#'   year_range = c(2015, 2022),
-#'   save = TRUE
-#' )
-#' }
+#' @return A data.table containing SDG indicator data.
 #'
 #' @export
 fetch_sdg_country_data <- function(goal = NULL,
@@ -50,13 +40,19 @@ fetch_sdg_country_data <- function(goal = NULL,
 
   if (length(missing_pkgs) > 0) {
     stop(
-      paste0(
-        "Missing required packages: ",
-        paste(missing_pkgs, collapse = ", "),
-        "\nPlease install them using install.packages()."
-      ),
+      paste0("Missing required packages: ",
+             paste(missing_pkgs, collapse = ", "),
+             "\nPlease install them using install.packages()."),
       call. = FALSE
     )
+  }
+
+  # -----------------------------
+  # Require goal or indicator
+  # -----------------------------
+  if (is.null(goal) && is.null(indicator)) {
+    stop("You must provide at least one of `goal` or `indicator`.",
+         call. = FALSE)
   }
 
   # -----------------------------
@@ -84,91 +80,90 @@ fetch_sdg_country_data <- function(goal = NULL,
   }
 
   # -----------------------------
-  # Build query
+  # Determine indicator list (CACHED)
+  # -----------------------------
+  if (!is.null(indicator)) {
+
+    indicator_list <- indicator
+
+  } else {
+
+    metadata_dt <- get_sdg_metadata()
+
+    indicator_list <- metadata_dt[goal == !!goal, indicator]
+
+    if (length(indicator_list) == 0) {
+      stop(
+        paste0("No indicators found under Goal ", goal, "."),
+        call. = FALSE
+      )
+    }
+
+    message(
+      "Fetching ", length(indicator_list),
+      " indicators under Goal ", goal, ".\n",
+      "This may take some time."
+    )
+  }
+
+  # -----------------------------
+  # Fetch data
   # -----------------------------
   base_url <- "https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data"
+  all_results <- data.table::data.table()
 
-  query_list <- list()
+  for (ind in indicator_list) {
 
-  if (!is.null(indicator)) query_list$Indicator <- indicator
-  if (!is.null(country)) query_list$AreaCode <- country
-  if (!is.null(year_range)) {
-    query_list$TimePeriodStart <- year_range[1]
-    query_list$TimePeriodEnd   <- year_range[2]
+    query_list <- list(Indicator = ind)
+
+    if (!is.null(country)) query_list$AreaCode <- country
+    if (!is.null(year_range)) {
+      query_list$TimePeriodStart <- year_range[1]
+      query_list$TimePeriodEnd   <- year_range[2]
+    }
+
+    response <- tryCatch({
+      httr2::request(base_url) |>
+        httr2::req_url_query(!!!query_list) |>
+        httr2::req_perform()
+    }, error = function(e) {
+      warning(
+        paste0("Failed to fetch indicator ", ind,
+               ". Skipping.\nTechnical message:\n", e$message),
+        call. = FALSE
+      )
+      return(NULL)
+    })
+
+    if (is.null(response)) next
+
+    parsed <- httr2::resp_body_json(response)
+
+    if (is.null(parsed$data) || length(parsed$data) == 0) next
+
+    dt <- data.table::rbindlist(lapply(parsed$data, function(x) {
+      data.table::data.table(
+        indicator = x$indicator,
+        country   = x$areaCode,
+        year      = as.numeric(x$timePeriod),
+        value     = suppressWarnings(as.numeric(x$value)),
+        unit      = x$unit
+      )
+    }), fill = TRUE)
+
+    all_results <- data.table::rbindlist(list(all_results, dt), fill = TRUE)
   }
 
-  # -----------------------------
-  # API Request with error handling
-  # -----------------------------
-  response <- tryCatch({
-
-    httr2::request(base_url) |>
-      httr2::req_url_query(!!!query_list) |>
-      httr2::req_perform()
-
-  }, error = function(e) {
-
-    stop(
-      paste0(
-        "\nUN SDG API request failed.\n\n",
-        "Possible causes:\n",
-        "- No internet connection\n",
-        "- UN API temporarily unavailable\n",
-        "- Invalid indicator or country code\n\n",
-        "Technical message:\n", e$message
-      ),
-      call. = FALSE
-    )
-  })
-
-  # -----------------------------
-  # Parse JSON
-  # -----------------------------
-  parsed <- tryCatch({
-    httr2::resp_body_json(response)
-  }, error = function(e) {
-    stop(
-      paste0(
-        "Failed to parse API response.\n",
-        "The API structure may have changed.\n\n",
-        "Technical message:\n", e$message
-      ),
-      call. = FALSE
-    )
-  })
-
-  if (is.null(parsed$data) || length(parsed$data) == 0) {
-    warning(
-      "No data returned for specified filters.\n",
-      "Verify indicator code, country ISO3 code, and year range.",
-      call. = FALSE
-    )
-    return(data.table::data.table())
+  if (nrow(all_results) == 0) {
+    warning("No data returned for specified filters.", call. = FALSE)
+    return(all_results)
   }
 
-  # -----------------------------
-  # Convert to data.table
-  # -----------------------------
-  dt <- data.table::rbindlist(lapply(parsed$data, function(x) {
-    data.table::data.table(
-      indicator = x$indicator,
-      country   = x$areaCode,
-      year      = as.numeric(x$timePeriod),
-      value     = suppressWarnings(as.numeric(x$value)),
-      unit      = x$unit
-    )
-  }), fill = TRUE)
-
-  # -----------------------------
-  # Inform user
-  # -----------------------------
   message(
     "\nSDG Data Successfully Retrieved\n",
     "---------------------------------\n",
-    "Indicator: ", ifelse(is.null(indicator), "Multiple", indicator), "\n",
-    "Country: ", ifelse(is.null(country), "Multiple", country), "\n",
-    "Years: ", min(dt$year, na.rm = TRUE), "-", max(dt$year, na.rm = TRUE), "\n",
-    "Observations: ", nrow(dt), "\n"
+    "Indicators retrieved: ", length(unique(all_results$indicator)), "\n",
+    "Observations: ", nrow(all_results), "\n"
   )
 
   # -----------------------------
@@ -183,26 +178,24 @@ fetch_sdg_country_data <- function(goal = NULL,
 
     file_stub <- paste0(
       "sdg_",
-      ifelse(is.null(indicator), "multi", gsub("\\.", "_", indicator)),
-      "_",
-      ifelse(is.null(country), "multi", country),
+      ifelse(is.null(goal), "multi", paste0("goal_", goal)),
       "_",
       format(Sys.Date())
     )
 
     if ("csv" %in% formats) {
       csv_path <- file.path(save_path, paste0(file_stub, ".csv"))
-      data.table::fwrite(dt, csv_path)
+      data.table::fwrite(all_results, csv_path)
       message("Saved CSV: ", normalizePath(csv_path))
     }
 
     if ("rds" %in% formats) {
       rds_path <- file.path(save_path, paste0(file_stub, ".rds"))
-      saveRDS(dt, rds_path)
+      saveRDS(all_results, rds_path)
       message("Saved RDS: ", normalizePath(rds_path))
       message("To reload: readRDS('", normalizePath(rds_path), "')")
     }
   }
 
-  return(dt[])
+  return(all_results[])
 }

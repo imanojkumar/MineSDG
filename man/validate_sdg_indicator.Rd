@@ -20,6 +20,8 @@ in the official UN SDG indicator database.
 }
 \details{
 Optionally verifies consistency between indicator and goal.
+
+Uses internally cached metadata via \code{get_sdg_metadata()}.
 }
 \examples{
 \dontrun{
