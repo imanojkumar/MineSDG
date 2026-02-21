@@ -263,6 +263,47 @@ generate_mining_risk_profile(dt, indicator = "15.3.1")
 
 ------------------------------------------------------------------------
 
+### Mining Risk Profiling
+
+- Indicator-level risk scoring
+- Trend + volatility + benchmark integration
+- Domain relevance scoring
+
+Example:
+
+``` r
+risk_profile <- generate_mining_risk_profile(
+  data = dt,
+  indicator = "15.3.1"
+)
+
+risk_profile
+```
+
+------------------------------------------------------------------------
+
+### Composite Mining ESG Index
+
+``` r
+index <- generate_mining_esg_index(
+  data = dt_multi,
+  indicators = c("6.4.1", "13.2.2", "15.3.1"),
+  weighting_method = "domain_weighted"
+)
+
+index
+```
+
+------------------------------------------------------------------------
+
+### Plot Mining ESG Index
+
+``` r
+plot_mining_esg_index(index)
+```
+
+------------------------------------------------------------------------
+
 ### Summary
 
 MineSDG now supports a full analytical workflow:

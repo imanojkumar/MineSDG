@@ -26,5 +26,8 @@ utils::globalVariables(c(
   "value_final",
   "growth_rate",
   "beta",
-  "convergence_type"
+  "convergence_type",
+  "percentile",
+  "composite_score",
+  "risk_category"
 ))

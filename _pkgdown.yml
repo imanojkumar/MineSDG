@@ -55,3 +55,8 @@ reference:
       - calculate_land_restoration
       - calculate_water_efficiency
       - generate_mining_risk_profile
+
+  - title: Composite ESG Index
+    contents:
+      - generate_mining_esg_index
+      - plot_mining_esg_index

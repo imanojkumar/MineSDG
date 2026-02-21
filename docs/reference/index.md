@@ -44,3 +44,10 @@
   : Calculate Water Use Efficiency (SDG 6.4)
 - [`generate_mining_risk_profile()`](https://imanojkumar.github.io/MineSDG/reference/generate_mining_risk_profile.md)
   : Generate Mining SDG Risk Profile
+
+## Composite ESG Index
+
+- [`generate_mining_esg_index()`](https://imanojkumar.github.io/MineSDG/reference/generate_mining_esg_index.md)
+  : Generate Composite Mining ESG Index
+- [`plot_mining_esg_index()`](https://imanojkumar.github.io/MineSDG/reference/plot_mining_esg_index.md)
+  : Plot Mining ESG Composite Index
