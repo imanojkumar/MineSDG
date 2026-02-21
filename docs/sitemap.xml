@@ -1,0 +1,17 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/MineSDG-introduction.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/reference/calculate_land_restoration.html</loc></url>
+<url><loc>/reference/calculate_water_efficiency.html</loc></url>
+<url><loc>/reference/fetch_sdg_country_data.html</loc></url>
+<url><loc>/reference/get_sdg_metadata.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/list_sdg_indicators.html</loc></url>
+<url><loc>/reference/validate_sdg_indicator.html</loc></url>
+</urlset>
+
