@@ -1,8 +1,8 @@
-# MineSDG - Mining Impact Tracking & Reporting
+# MineSDG - SDG Analytics & Mining-Sector Intelligence
 
 ------------------------------------------------------------------------
 
-## Introduction
+## 1. Introduction
 
 MineSDG provides tools to explore and retrieve official Sustainable
 Development Goal (SDG) indicator data from the United Nations SDG API.
@@ -17,7 +17,9 @@ The package includes:
 
 ------------------------------------------------------------------------
 
-## Listing SDG Indicators
+## 2. SDG Analytics Layer
+
+### Listing SDG Indicators
 
 To view all indicators:
 
@@ -33,7 +35,7 @@ list_sdg_indicators(goal = 15)
 
 ------------------------------------------------------------------------
 
-## Validating Indicators
+### Validating Indicators
 
 ``` r
 validate_sdg_indicator("15.3.1")
@@ -47,7 +49,7 @@ validate_sdg_indicator("15.3.1", goal = 15)
 
 ------------------------------------------------------------------------
 
-## Fetching Data for a Single Indicator
+### Fetching Data for a Single Indicator
 
 ``` r
 dt <- fetch_sdg_country_data(
@@ -61,7 +63,7 @@ head(dt)
 
 ------------------------------------------------------------------------
 
-## Fetching All Indicators Under a Goal
+### Fetching All Indicators Under a Goal
 
 ``` r
 dt_goal <- fetch_sdg_country_data(
@@ -75,7 +77,7 @@ head(dt_goal)
 
 ------------------------------------------------------------------------
 
-## Saving Data
+### Saving Data
 
 ``` r
 fetch_sdg_country_data(
@@ -94,7 +96,7 @@ Files are saved under:
 
 ------------------------------------------------------------------------
 
-## Advanced Analytics
+### Advanced Analytics
 
 MineSDG 0.2.0 expands the package beyond data retrieval into a complete
 SDG analytics engine.
@@ -110,7 +112,7 @@ The following analytical layers are now available:
 
 ------------------------------------------------------------------------
 
-## Trend Analysis
+### Trend Analysis
 
 ``` r
 trend <- analyze_sdg_trend(dt)
@@ -127,7 +129,7 @@ This function computes:
 
 ------------------------------------------------------------------------
 
-## Stability & Volatility Diagnostics
+### Stability & Volatility Diagnostics
 
 ``` r
 stability <- compute_sdg_stability(dt)
@@ -146,7 +148,7 @@ operational performance diagnostics.
 
 ------------------------------------------------------------------------
 
-## Benchmarking Performance
+### Benchmarking Performance
 
 ``` r
 benchmark <- benchmark_sdg_performance(dt)
@@ -163,7 +165,7 @@ Outputs:
 
 ------------------------------------------------------------------------
 
-## Convergence Analysis
+### Convergence Analysis
 
 ``` r
 convergence <- analyze_sdg_convergence(dt)
@@ -175,7 +177,7 @@ lagging countries are catching up in SDG performance.
 
 ------------------------------------------------------------------------
 
-## Executive Summary Generation
+### Executive Summary Generation
 
 ``` r
 summary_text <- generate_sdg_executive_summary(trend, benchmark)
@@ -191,7 +193,7 @@ Produces narrative, board-ready interpretation suitable for:
 
 ------------------------------------------------------------------------
 
-## Visualization Layer
+### Visualization Layer
 
 MineSDG includes publication-ready visualization tools:
 
@@ -207,7 +209,54 @@ publication-ready styling.
 
 ------------------------------------------------------------------------
 
-## Summary
+## 3. Mining-Sector Interpretation Layer
+
+MineSDG now includes a sector-specific interpretation layer tailored for
+mining sustainability analytics.
+
+This enables translation of SDG indicators into mining-relevant
+sustainability domains, relevance scoring, and strategic narrative
+interpretation.
+
+------------------------------------------------------------------------
+
+### Mapping SDG to Mining Domains
+
+``` r
+map_sdg_to_mining_domain(indicator = "15.3.1")
+```
+
+Example output:
+
+- *Goal:* 15
+- *Domain:* Biodiversity & Land
+- *Relevance Score:* 5
+- *Narrative:* Land degradation, rehabilitation, and biodiversity
+  restoration are core mining sustainability metrics.
+
+------------------------------------------------------------------------
+
+### Domain Categories
+
+The following mining sustainability domains are currently defined:
+
+- Climate & Energy
+- Water & Resource Efficiency
+- Biodiversity & Land
+- Community & Social Impact
+- Governance & Institutions
+- Economic Development
+- Health & Safety
+- Education & Workforce
+
+This layer enables sector-aware ESG analytics beyond generic SDG
+evaluation.
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+### Summary
 
 MineSDG now supports a full analytical workflow:
 

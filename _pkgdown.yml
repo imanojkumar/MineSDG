@@ -14,10 +14,43 @@ navbar:
       - github
 
 home:
-  title: "MineSDG"
+  title: "MineSDG — SDG Analytics & Mining-Sector Intelligence"
   description: >
-    MineSDG is an R package designed to bridge mining operations,
-    ESG performance analytics, and Sustainable Development Goals (SDG)
-    monitoring. It enables country-level SDG data retrieval,
-    quantitative operational metrics, and research-grade analysis
-    tailored for the mining, minerals, and metals sector.
+    MineSDG is a research-grade R package that integrates
+    Sustainable Development Goal (SDG) analytics with
+    mining-sector sustainability intelligence.
+
+    The package provides:
+      • Official UN SDG data retrieval
+      • Trend, stability, benchmarking & convergence analysis
+      • Executive reporting utilities
+      • Visualization tools
+      • Mining-sector domain classification & ESG interpretation
+
+reference:
+
+  - title: Core SDG Analytics
+    contents:
+      - fetch_sdg_country_data
+      - list_sdg_indicators
+      - validate_sdg_indicator
+      - get_sdg_metadata
+      - analyze_sdg_trend
+      - compute_sdg_stability
+      - benchmark_sdg_performance
+      - analyze_sdg_convergence
+      - generate_sdg_executive_summary
+      - summarize_sdg_data
+
+  - title: Visualization Layer
+    contents:
+      - plot_sdg_trend
+      - plot_sdg_benchmark
+      - plot_sdg_volatility
+      - plot_sdg_convergence
+
+  - title: Mining-Sector Intelligence
+    contents:
+      - map_sdg_to_mining_domain
+      - calculate_land_restoration
+      - calculate_water_efficiency

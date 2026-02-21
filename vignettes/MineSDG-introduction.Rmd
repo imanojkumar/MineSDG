@@ -1,8 +1,8 @@
 ---
-title: "MineSDG - Mining Impact Tracking & Reporting"
+title: "MineSDG - SDG Analytics & Mining-Sector Intelligence"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{MineSDG - Mining Impact Tracking & Reporting}
+  %\VignetteIndexEntry{MineSDG - SDG Analytics & Mining-Sector Intelligence}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,7 +14,7 @@ library(MineSDG)
 
 ------------------------------------------------------------------------
 
-## Introduction
+# 1. Introduction
 
 MineSDG provides tools to explore and retrieve official Sustainable Development Goal (SDG) indicator data from the United Nations SDG API.
 
@@ -27,6 +27,8 @@ The package includes:
  - Session-level metadata caching
 
 ------------------------------------------------------------------------
+
+# 2. SDG Analytics Layer
 
 ## Listing SDG Indicators
 
@@ -216,6 +218,50 @@ All plots use ggplot2 (optional dependency) and follow minimal, publication-read
 
 ------------------------------------------------------------------------
 
+# 3. Mining-Sector Interpretation Layer
+
+MineSDG now includes a sector-specific interpretation layer tailored for mining sustainability analytics.
+
+This enables translation of SDG indicators into mining-relevant sustainability domains, relevance scoring, and strategic narrative interpretation.
+
+------------------------------------------------------------------------
+
+## Mapping SDG to Mining Domains
+
+```{r eval=FALSE}
+map_sdg_to_mining_domain(indicator = "15.3.1")
+```
+
+Example output:
+
+ - *Goal:* 15
+ - *Domain:* Biodiversity & Land
+ - *Relevance Score:* 5
+ - *Narrative:* Land degradation, rehabilitation, and biodiversity restoration are core mining sustainability metrics.
+
+------------------------------------------------------------------------
+
+## Domain Categories
+
+The following mining sustainability domains are currently defined:
+
+- Climate & Energy
+- Water & Resource Efficiency
+- Biodiversity & Land
+- Community & Social Impact
+- Governance & Institutions
+- Economic Development
+- Health & Safety
+- Education & Workforce
+
+This layer enables sector-aware ESG analytics beyond generic SDG evaluation.
+
+------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------
 ## Summary
 
 MineSDG now supports a full analytical workflow:

@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>MineSDG - Mining Impact Tracking &amp; Reporting • MineSDG</title>
+<title>MineSDG - SDG Analytics &amp; Mining-Sector Intelligence • MineSDG</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="MineSDG - Mining Impact Tracking &amp; Reporting">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="MineSDG - SDG Analytics &amp; Mining-Sector Intelligence">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">MineSDG</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +33,7 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/MineSDG-introduction.html">MineSDG - Mining Impact Tracking &amp; Reporting</a></li>
+<li><a class="dropdown-item" href="../articles/MineSDG-introduction.html">MineSDG - SDG Analytics &amp; Mining-Sector Intelligence</a></li>
   </ul>
 </li>
       </ul>
@@ -52,7 +52,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>MineSDG - Mining Impact Tracking &amp; Reporting</h1>
+      <h1>MineSDG - SDG Analytics &amp; Mining-Sector Intelligence</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/imanojkumar/MineSDG/blob/HEAD/vignettes/MineSDG-introduction.Rmd" class="external-link"><code>vignettes/MineSDG-introduction.Rmd</code></a></small>
@@ -63,7 +63,7 @@
     
 <hr>
 <div class="section level2">
-<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+<h2 id="introduction">1. Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <p>MineSDG provides tools to explore and retrieve official Sustainable
 Development Goal (SDG) indicator data from the United Nations SDG
@@ -79,8 +79,11 @@ API.</p>
 <hr>
 </div>
 <div class="section level2">
-<h2 id="listing-sdg-indicators">Listing SDG Indicators<a class="anchor" aria-label="anchor" href="#listing-sdg-indicators"></a>
+<h2 id="sdg-analytics-layer">2. SDG Analytics Layer<a class="anchor" aria-label="anchor" href="#sdg-analytics-layer"></a>
 </h2>
+<div class="section level3">
+<h3 id="listing-sdg-indicators">Listing SDG Indicators<a class="anchor" aria-label="anchor" href="#listing-sdg-indicators"></a>
+</h3>
 <p>To view all indicators:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="../reference/list_sdg_indicators.html">list_sdg_indicators</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -89,9 +92,9 @@ API.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/list_sdg_indicators.html">list_sdg_indicators</a></span><span class="op">(</span>goal <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></span></code></pre></div>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="validating-indicators">Validating Indicators<a class="anchor" aria-label="anchor" href="#validating-indicators"></a>
-</h2>
+<div class="section level3">
+<h3 id="validating-indicators">Validating Indicators<a class="anchor" aria-label="anchor" href="#validating-indicators"></a>
+</h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/validate_sdg_indicator.html">validate_sdg_indicator</a></span><span class="op">(</span><span class="st">"15.3.1"</span><span class="op">)</span></span></code></pre></div>
 <p>Goal consistency validation:</p>
@@ -99,9 +102,9 @@ API.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/validate_sdg_indicator.html">validate_sdg_indicator</a></span><span class="op">(</span><span class="st">"15.3.1"</span>, goal <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></span></code></pre></div>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="fetching-data-for-a-single-indicator">Fetching Data for a Single Indicator<a class="anchor" aria-label="anchor" href="#fetching-data-for-a-single-indicator"></a>
-</h2>
+<div class="section level3">
+<h3 id="fetching-data-for-a-single-indicator">Fetching Data for a Single Indicator<a class="anchor" aria-label="anchor" href="#fetching-data-for-a-single-indicator"></a>
+</h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fetch_sdg_country_data.html">fetch_sdg_country_data</a></span><span class="op">(</span></span>
 <span>  indicator <span class="op">=</span> <span class="st">"15.3.1"</span>,</span>
@@ -112,9 +115,9 @@ API.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span></code></pre></div>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="fetching-all-indicators-under-a-goal">Fetching All Indicators Under a Goal<a class="anchor" aria-label="anchor" href="#fetching-all-indicators-under-a-goal"></a>
-</h2>
+<div class="section level3">
+<h3 id="fetching-all-indicators-under-a-goal">Fetching All Indicators Under a Goal<a class="anchor" aria-label="anchor" href="#fetching-all-indicators-under-a-goal"></a>
+</h3>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dt_goal</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/fetch_sdg_country_data.html">fetch_sdg_country_data</a></span><span class="op">(</span></span>
 <span>  goal <span class="op">=</span> <span class="fl">15</span>,</span>
@@ -125,9 +128,9 @@ API.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">dt_goal</span><span class="op">)</span></span></code></pre></div>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="saving-data">Saving Data<a class="anchor" aria-label="anchor" href="#saving-data"></a>
-</h2>
+<div class="section level3">
+<h3 id="saving-data">Saving Data<a class="anchor" aria-label="anchor" href="#saving-data"></a>
+</h3>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/fetch_sdg_country_data.html">fetch_sdg_country_data</a></span><span class="op">(</span></span>
 <span>  indicator <span class="op">=</span> <span class="st">"15.3.1"</span>,</span>
@@ -139,9 +142,9 @@ API.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>.<span class="sc">/</span>data<span class="sc">/</span>sdg_downloads<span class="sc">/</span></span></code></pre></div>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="advanced-analytics">Advanced Analytics<a class="anchor" aria-label="anchor" href="#advanced-analytics"></a>
-</h2>
+<div class="section level3">
+<h3 id="advanced-analytics">Advanced Analytics<a class="anchor" aria-label="anchor" href="#advanced-analytics"></a>
+</h3>
 <p>MineSDG 0.2.0 expands the package beyond data retrieval into a
 complete SDG analytics engine.</p>
 <p>The following analytical layers are now available:</p>
@@ -155,9 +158,9 @@ complete SDG analytics engine.</p>
 </ul>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="trend-analysis">Trend Analysis<a class="anchor" aria-label="anchor" href="#trend-analysis"></a>
-</h2>
+<div class="section level3">
+<h3 id="trend-analysis">Trend Analysis<a class="anchor" aria-label="anchor" href="#trend-analysis"></a>
+</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">trend</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/analyze_sdg_trend.html">analyze_sdg_trend</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
 <span><span class="va">trend</span></span></code></pre></div>
@@ -171,9 +174,9 @@ complete SDG analytics engine.</p>
 </ul>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="stability-volatility-diagnostics">Stability &amp; Volatility Diagnostics<a class="anchor" aria-label="anchor" href="#stability-volatility-diagnostics"></a>
-</h2>
+<div class="section level3">
+<h3 id="stability-volatility-diagnostics">Stability &amp; Volatility Diagnostics<a class="anchor" aria-label="anchor" href="#stability-volatility-diagnostics"></a>
+</h3>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">stability</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/compute_sdg_stability.html">compute_sdg_stability</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
 <span><span class="va">stability</span></span></code></pre></div>
@@ -188,9 +191,9 @@ complete SDG analytics engine.</p>
 operational performance diagnostics.</p>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="benchmarking-performance">Benchmarking Performance<a class="anchor" aria-label="anchor" href="#benchmarking-performance"></a>
-</h2>
+<div class="section level3">
+<h3 id="benchmarking-performance">Benchmarking Performance<a class="anchor" aria-label="anchor" href="#benchmarking-performance"></a>
+</h3>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">benchmark</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/benchmark_sdg_performance.html">benchmark_sdg_performance</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
 <span><span class="va">benchmark</span></span></code></pre></div>
@@ -204,9 +207,9 @@ operational performance diagnostics.</p>
 </ul>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="convergence-analysis">Convergence Analysis<a class="anchor" aria-label="anchor" href="#convergence-analysis"></a>
-</h2>
+<div class="section level3">
+<h3 id="convergence-analysis">Convergence Analysis<a class="anchor" aria-label="anchor" href="#convergence-analysis"></a>
+</h3>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">convergence</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/analyze_sdg_convergence.html">analyze_sdg_convergence</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
 <span><span class="va">convergence</span></span></code></pre></div>
@@ -214,9 +217,9 @@ operational performance diagnostics.</p>
 lagging countries are catching up in SDG performance.</p>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="executive-summary-generation">Executive Summary Generation<a class="anchor" aria-label="anchor" href="#executive-summary-generation"></a>
-</h2>
+<div class="section level3">
+<h3 id="executive-summary-generation">Executive Summary Generation<a class="anchor" aria-label="anchor" href="#executive-summary-generation"></a>
+</h3>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">summary_text</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/generate_sdg_executive_summary.html">generate_sdg_executive_summary</a></span><span class="op">(</span><span class="va">trend</span>, <span class="va">benchmark</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">summary_text</span><span class="op">)</span></span></code></pre></div>
@@ -229,9 +232,9 @@ lagging countries are catching up in SDG performance.</p>
 </ul>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="visualization-layer">Visualization Layer<a class="anchor" aria-label="anchor" href="#visualization-layer"></a>
-</h2>
+<div class="section level3">
+<h3 id="visualization-layer">Visualization Layer<a class="anchor" aria-label="anchor" href="#visualization-layer"></a>
+</h3>
 <p>MineSDG includes publication-ready visualization tools:</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_sdg_trend.html">plot_sdg_trend</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
@@ -242,9 +245,58 @@ lagging countries are catching up in SDG performance.</p>
 publication-ready styling.</p>
 <hr>
 </div>
+</div>
 <div class="section level2">
-<h2 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+<h2 id="mining-sector-interpretation-layer">3. Mining-Sector Interpretation Layer<a class="anchor" aria-label="anchor" href="#mining-sector-interpretation-layer"></a>
 </h2>
+<p>MineSDG now includes a sector-specific interpretation layer tailored
+for mining sustainability analytics.</p>
+<p>This enables translation of SDG indicators into mining-relevant
+sustainability domains, relevance scoring, and strategic narrative
+interpretation.</p>
+<hr>
+<div class="section level3">
+<h3 id="mapping-sdg-to-mining-domains">Mapping SDG to Mining Domains<a class="anchor" aria-label="anchor" href="#mapping-sdg-to-mining-domains"></a>
+</h3>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/map_sdg_to_mining_domain.html">map_sdg_to_mining_domain</a></span><span class="op">(</span>indicator <span class="op">=</span> <span class="st">"15.3.1"</span><span class="op">)</span></span></code></pre></div>
+<p>Example output:</p>
+<ul>
+<li>
+<em>Goal:</em> 15</li>
+<li>
+<em>Domain:</em> Biodiversity &amp; Land</li>
+<li>
+<em>Relevance Score:</em> 5</li>
+<li>
+<em>Narrative:</em> Land degradation, rehabilitation, and
+biodiversity restoration are core mining sustainability metrics.</li>
+</ul>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="domain-categories">Domain Categories<a class="anchor" aria-label="anchor" href="#domain-categories"></a>
+</h3>
+<p>The following mining sustainability domains are currently
+defined:</p>
+<ul>
+<li>Climate &amp; Energy</li>
+<li>Water &amp; Resource Efficiency</li>
+<li>Biodiversity &amp; Land</li>
+<li>Community &amp; Social Impact</li>
+<li>Governance &amp; Institutions</li>
+<li>Economic Development</li>
+<li>Health &amp; Safety</li>
+<li>Education &amp; Workforce</li>
+</ul>
+<p>This layer enables sector-aware ESG analytics beyond generic SDG
+evaluation.</p>
+<hr>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+</h3>
 <p>MineSDG now supports a full analytical workflow:</p>
 <p>Data Retrieval → Trend Diagnostics → Stability Analysis →
 Benchmarking → Convergence Testing → Executive Reporting →
@@ -257,6 +309,7 @@ suitable for:</p>
 <li>Academic research</li>
 <li>Mining-sector sustainability assessment</li>
 </ul>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

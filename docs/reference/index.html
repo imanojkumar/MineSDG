@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">MineSDG</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
       <ul class="navbar-nav me-auto"><li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/MineSDG-introduction.html">MineSDG - Mining Impact Tracking &amp; Reporting</a></li>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="../articles/MineSDG-introduction.html">MineSDG - SDG Analytics &amp; Mining-Sector Intelligence</a></li>
   </ul></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><a class="external-link nav-link" href="https://github.com/imanojkumar/MineSDG/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="section level2">
-      <h2 id="all-functions">All functions<a class="anchor" aria-label="anchor" href="#all-functions"></a></h2>
+      <h2 id="core-sdg-analytics">Core SDG Analytics<a class="anchor" aria-label="anchor" href="#core-sdg-analytics"></a></h2>
 
 
 
@@ -44,10 +44,31 @@
 
       <dl><dt>
 
-          <code><a href="analyze_sdg_convergence.html">analyze_sdg_convergence()</a></code>
+          <code><a href="fetch_sdg_country_data.html">fetch_sdg_country_data()</a></code>
 
         </dt>
-        <dd>Analyze SDG Convergence</dd>
+        <dd>Fetch Country-Level SDG Data from UN SDG API</dd>
+
+        <dt>
+
+          <code><a href="list_sdg_indicators.html">list_sdg_indicators()</a></code>
+
+        </dt>
+        <dd>List SDG Indicators and Descriptions</dd>
+
+        <dt>
+
+          <code><a href="validate_sdg_indicator.html">validate_sdg_indicator()</a></code>
+
+        </dt>
+        <dd>Validate SDG Indicator Code</dd>
+
+        <dt>
+
+          <code><a href="get_sdg_metadata.html">get_sdg_metadata()</a></code>
+
+        </dt>
+        <dd>Internal: Get SDG Metadata (Cached)</dd>
 
         <dt>
 
@@ -58,10 +79,91 @@
 
         <dt>
 
+          <code><a href="compute_sdg_stability.html">compute_sdg_stability()</a></code>
+
+        </dt>
+        <dd>Compute SDG Stability Metrics</dd>
+
+        <dt>
+
           <code><a href="benchmark_sdg_performance.html">benchmark_sdg_performance()</a></code>
 
         </dt>
         <dd>Benchmark SDG Performance</dd>
+
+        <dt>
+
+          <code><a href="analyze_sdg_convergence.html">analyze_sdg_convergence()</a></code>
+
+        </dt>
+        <dd>Analyze SDG Convergence</dd>
+
+        <dt>
+
+          <code><a href="generate_sdg_executive_summary.html">generate_sdg_executive_summary()</a></code>
+
+        </dt>
+        <dd>Generate Executive Summary for SDG Performance</dd>
+
+        <dt>
+
+          <code><a href="summarize_sdg_data.html">summarize_sdg_data()</a></code>
+
+        </dt>
+        <dd>Summarize SDG Indicator Data</dd>
+      </dl></div><div class="section level2">
+      <h2 id="visualization-layer">Visualization Layer<a class="anchor" aria-label="anchor" href="#visualization-layer"></a></h2>
+
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="plot_sdg_trend.html">plot_sdg_trend()</a></code>
+
+        </dt>
+        <dd>Plot SDG Indicator Trend</dd>
+
+        <dt>
+
+          <code><a href="plot_sdg_benchmark.html">plot_sdg_benchmark()</a></code>
+
+        </dt>
+        <dd>Plot SDG Benchmark Comparison</dd>
+
+        <dt>
+
+          <code><a href="plot_sdg_volatility.html">plot_sdg_volatility()</a></code>
+
+        </dt>
+        <dd>Plot SDG Volatility</dd>
+
+        <dt>
+
+          <code><a href="plot_sdg_convergence.html">plot_sdg_convergence()</a></code>
+
+        </dt>
+        <dd>Plot SDG Convergence</dd>
+      </dl></div><div class="section level2">
+      <h2 id="mining-sector-intelligence">Mining-Sector Intelligence<a class="anchor" aria-label="anchor" href="#mining-sector-intelligence"></a></h2>
+
+
+
+      <dl></dl></div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="map_sdg_to_mining_domain.html">map_sdg_to_mining_domain()</a></code>
+
+        </dt>
+        <dd>Map SDG Indicator to Mining-Sector Domain</dd>
 
         <dt>
 
@@ -76,78 +178,9 @@
 
         </dt>
         <dd>Calculate Water Use Efficiency (SDG 6.4)</dd>
-
-        <dt>
-
-          <code><a href="compute_sdg_stability.html">compute_sdg_stability()</a></code>
-
-        </dt>
-        <dd>Compute SDG Stability Metrics</dd>
-
-        <dt>
-
-          <code><a href="fetch_sdg_country_data.html">fetch_sdg_country_data()</a></code>
-
-        </dt>
-        <dd>Fetch Country-Level SDG Data from UN SDG API</dd>
-
-        <dt>
-
-          <code><a href="generate_sdg_executive_summary.html">generate_sdg_executive_summary()</a></code>
-
-        </dt>
-        <dd>Generate Executive Summary for SDG Performance</dd>
-
-        <dt>
-
-          <code><a href="list_sdg_indicators.html">list_sdg_indicators()</a></code>
-
-        </dt>
-        <dd>List SDG Indicators and Descriptions</dd>
-
-        <dt>
-
-          <code><a href="plot_sdg_benchmark.html">plot_sdg_benchmark()</a></code>
-
-        </dt>
-        <dd>Plot SDG Benchmark Comparison</dd>
-
-        <dt>
-
-          <code><a href="plot_sdg_convergence.html">plot_sdg_convergence()</a></code>
-
-        </dt>
-        <dd>Plot SDG Convergence</dd>
-
-        <dt>
-
-          <code><a href="plot_sdg_trend.html">plot_sdg_trend()</a></code>
-
-        </dt>
-        <dd>Plot SDG Indicator Trend</dd>
-
-        <dt>
-
-          <code><a href="plot_sdg_volatility.html">plot_sdg_volatility()</a></code>
-
-        </dt>
-        <dd>Plot SDG Volatility</dd>
-
-        <dt>
-
-          <code><a href="summarize_sdg_data.html">summarize_sdg_data()</a></code>
-
-        </dt>
-        <dd>Summarize SDG Indicator Data</dd>
-
-        <dt>
-
-          <code><a href="validate_sdg_indicator.html">validate_sdg_indicator()</a></code>
-
-        </dt>
-        <dd>Validate SDG Indicator Code</dd>
       </dl></div>
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
