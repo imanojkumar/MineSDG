@@ -48,7 +48,7 @@ validate_sdg_indicator <- function(indicator, goal = NULL) {
   # -----------------------------
   # Check indicator existence
   # -----------------------------
-  indicator_entry <- metadata_dt[indicator == !!indicator]
+  indicator_entry <- metadata_dt[metadata_dt[["indicator"]] == indicator, , drop = FALSE]
 
   if (nrow(indicator_entry) == 0) {
     stop(
@@ -79,13 +79,6 @@ validate_sdg_indicator <- function(indicator, goal = NULL) {
       )
     }
   }
-
-  message(
-    "Indicator ", indicator,
-    " is valid",
-    if (!is.null(goal)) paste0(" under Goal ", goal) else "",
-    "."
-  )
 
   return(TRUE)
 }
