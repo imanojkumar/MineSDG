@@ -2,4 +2,4 @@
 
 ### All vignettes
 
-- [MineSDG-introduction](MineSDG-introduction.md):
+- [MineSDG-introduction](https://imanojkumar.github.io/MineSDG/articles/MineSDG-introduction.md):

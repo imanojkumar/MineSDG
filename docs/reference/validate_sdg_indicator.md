@@ -28,7 +28,7 @@ Logical TRUE if valid. Stops with error if invalid.
 Optionally verifies consistency between indicator and goal.
 
 Uses internally cached metadata via
-[`get_sdg_metadata()`](get_sdg_metadata.md).
+[`get_sdg_metadata()`](https://imanojkumar.github.io/MineSDG/reference/get_sdg_metadata.md).
 
 ## Examples
 

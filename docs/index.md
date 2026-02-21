@@ -1,5 +1,13 @@
 # MineSDG
 
+  
+
+[![R-CMD-check](https://github.com/imanojkumar/MineSDG/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/imanojkumar/MineSDG/actions)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+
+  
+
 `MineSDG` is an R package designed to help mining, minerals, and metals
 professionals quantify their impact on United Nations Sustainable
 Development Goals (SDGs).

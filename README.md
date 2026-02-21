@@ -1,4 +1,16 @@
 
+<br>
+
+<p align="center">
+
+[![R-CMD-check](https://github.com/imanojkumar/MineSDG/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/imanojkumar/MineSDG/actions)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+
+</p>
+
+<br>
+
 # MineSDG
 
 <!-- badges: start -->

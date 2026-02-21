@@ -1,5 +1,13 @@
 # MineSDG
 
+  
+
+[![R-CMD-check](https://github.com/imanojkumar/MineSDG/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/imanojkumar/MineSDG/actions)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+
+  
+
 `MineSDG` is an R package designed to help mining, minerals, and metals
 professionals quantify their impact on United Nations Sustainable
 Development Goals (SDGs).
@@ -47,19 +55,19 @@ library(MineSDG)
 
 ## All functions
 
-- [`calculate_land_restoration()`](calculate_land_restoration.md) :
-  Calculate Land Restoration Rehabilitation Rate
-- [`calculate_water_efficiency()`](calculate_water_efficiency.md) :
-  Calculate Water Use Efficiency (SDG 6.4)
-- [`fetch_sdg_country_data()`](fetch_sdg_country_data.md) : Fetch
-  Country-Level SDG Data from UN SDG API
-- [`list_sdg_indicators()`](list_sdg_indicators.md) : List SDG
-  Indicators and Descriptions
-- [`validate_sdg_indicator()`](validate_sdg_indicator.md) : Validate SDG
-  Indicator Code
+- [`calculate_land_restoration()`](https://imanojkumar.github.io/MineSDG/reference/calculate_land_restoration.md)
+  : Calculate Land Restoration Rehabilitation Rate
+- [`calculate_water_efficiency()`](https://imanojkumar.github.io/MineSDG/reference/calculate_water_efficiency.md)
+  : Calculate Water Use Efficiency (SDG 6.4)
+- [`fetch_sdg_country_data()`](https://imanojkumar.github.io/MineSDG/reference/fetch_sdg_country_data.md)
+  : Fetch Country-Level SDG Data from UN SDG API
+- [`list_sdg_indicators()`](https://imanojkumar.github.io/MineSDG/reference/list_sdg_indicators.md)
+  : List SDG Indicators and Descriptions
+- [`validate_sdg_indicator()`](https://imanojkumar.github.io/MineSDG/reference/validate_sdg_indicator.md)
+  : Validate SDG Indicator Code
 
 # Articles
 
 ### All vignettes
 
-- [MineSDG-introduction](MineSDG-introduction.md):
+- [MineSDG-introduction](https://imanojkumar.github.io/MineSDG/articles/MineSDG-introduction.md):

@@ -1,4 +1,23 @@
-url: ~
+url: https://imanojkumar.github.io/MineSDG/
+
 template:
   bootstrap: 5
+  bootswatch: flatly
 
+navbar:
+  structure:
+    left:
+      - home
+      - reference
+      - articles
+    right:
+      - github
+
+home:
+  title: "MineSDG"
+  description: >
+    MineSDG is an R package designed to bridge mining operations,
+    ESG performance analytics, and Sustainable Development Goals (SDG)
+    monitoring. It enables country-level SDG data retrieval,
+    quantitative operational metrics, and research-grade analysis
+    tailored for the mining, minerals, and metals sector.
