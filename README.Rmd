@@ -14,6 +14,7 @@ knitr::opts_chunk$set(
 # MineSDG
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/imanojkumar/MineSDG/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/imanojkumar/MineSDG/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 `MineSDG` is an R package designed to help mining, minerals, and metals professionals quantify their impact on United Nations Sustainable Development Goals (SDGs).
