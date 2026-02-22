@@ -14,7 +14,7 @@ navbar:
       - github
 
 home:
-  title: "MineSDG — SDG Analytics & Mining-Sector Intelligence"
+  title: "MineSDG — Strategic Analytics & Sector Intelligence"
   description: >
     MineSDG is a research-grade R package that integrates
     Sustainable Development Goal (SDG) analytics with
@@ -49,7 +49,7 @@ reference:
       - plot_sdg_volatility
       - plot_sdg_convergence
 
-  - title: Mining-Sector Intelligence
+  - title: Mining Sector Intelligence
     contents:
       - map_sdg_to_mining_domain
       - calculate_land_restoration

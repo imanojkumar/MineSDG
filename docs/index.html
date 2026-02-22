@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>MineSDG — SDG Analytics &amp; Mining-Sector Intelligence • MineSDG</title>
+<title>MineSDG — Strategic Analytics &amp; Sector Intelligence • MineSDG</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="MineSDG — SDG Analytics &amp; Mining-Sector Intelligence">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="MineSDG — Strategic Analytics &amp; Sector Intelligence">
 <meta name="description" content="MineSDG is a research-grade R package that integrates Sustainable Development Goal (SDG) analytics with mining-sector sustainability intelligence.
 The package provides:
   • Official UN SDG data retrieval
@@ -49,7 +49,7 @@ The package provides:
 <li class="nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="articles/MineSDG-introduction.html">MineSDG - SDG Analytics &amp; Mining-Sector Intelligence</a></li>
+<li><a class="dropdown-item" href="articles/MineSDG-introduction.html">MineSDG - Strategic Analytics &amp; Sector Intelligence</a></li>
   </ul>
 </li>
       </ul>
@@ -69,37 +69,96 @@ The package provides:
 
 <p><br></p>
 <div class="section level1">
-<div class="page-header"><h1 id="minesdg">MineSDG<a class="anchor" aria-label="anchor" href="#minesdg"></a>
+<div class="page-header"><h1 id="minesdg-strategic-analytics--sector-intelligence">MineSDG: Strategic Analytics &amp; Sector Intelligence<a class="anchor" aria-label="anchor" href="#minesdg-strategic-analytics--sector-intelligence"></a>
 </h1></div>
 <!-- badges: start -->
 
-<p><code>MineSDG</code> is an R package designed to help mining, minerals, and metals professionals quantify their impact on United Nations Sustainable Development Goals (SDGs).</p>
-<p>Unlike generic text-mining SDG tools, <code>MineSDG</code> focuses on quantitative operational data specific to the natural resources sector (e.g., water withdrawal volumes, land disturbance ratios, rehabilitation rates).</p>
-</div>
-<div class="section level1">
-<h1 id="project-roadmap">Project Roadmap<a class="anchor" aria-label="anchor" href="#project-roadmap"></a>
-</h1>
-<p>This package is currently under active development. The initial release will focus on:</p>
+<p><b>MineSDG</b> is a research-grade R framework designed to bridge the gap between raw operational data and the United Nations Sustainable Development Goals (SDGs). While generic tools rely on text-mining, <code>MineSDG</code> utilizes a quantitative “Sector Intelligence” layer to provide deep, actionable insights into mining sustainability.</p>
+<p>The framework is architected for multi-source data agility, enabling users to integrate global sustainability indicators with regional benchmarks and internal corporate metrics to create a unified “<em>Single Source of Truth</em>” for ESG performance.</p>
+<p>It transforms fragmented metrics into executive-ready intelligence through four analytical pillars:</p>
 <ul>
-<li><p>SDG 6 (Clean Water &amp; Sanitation): Calculating water recycling efficiency and withdrawal intensity.</p></li>
-<li><p>SDG 15 (Life on Land): Metrics for land disturbance vs. rehabilitation.</p></li>
-<li><p>Global Reporting Alignment: Computes metrics aligned with GRI (Global Reporting Initiative) Standards (specifically GRI 303 &amp; 304) and SASB Metals &amp; Mining standards.</p></li>
+<li><p><b>Agnostic Data Integration</b>: Robust retrieval and harmonization of global, regional, and sector-specific sustainability datasets.</p></li>
+<li><p><b>Advanced Statistical Diagnostics</b>: Trend analysis, volatility indexing, and convergence testing.</p></li>
+<li><p><b>Mining-Specific Interpretation</b>: Mapping indicators to industry domains like Biodiversity &amp; Land or Resource Efficiency.</p></li>
+<li><p><b>Strategic Reporting</b>: Automated generation of board-ready executive summaries and publication-quality visualizations.</p></li>
 </ul>
+<div class="section level2">
+<h2 id="key-capabilities">Key Capabilities<a class="anchor" aria-label="anchor" href="#key-capabilities"></a>
+</h2>
+<ul>
+<li><p><b>SDG Analytics Engine</b>: Perform CAGR calculations, linear trend slopes, and percent change analysis on sustainability metrics.</p></li>
+<li><p><b>Stability &amp; Risk Diagnostics</b>: Evaluate ESG risk through volatility indexing and coefficient of variation.</p></li>
+<li><p><b>Benchmarking &amp; Ranking</b>: Compare performance against global benchmarks with automated Z-scoring and percentile ranking.</p></li>
+<li><p><b>Mining Risk Engine</b>: Generate sector-aware risk profiles by integrating indicator trends with domain-specific relevance scoring.</p></li>
+<li><p><b>Composite ESG Indexing</b>: Build weighted indices (e.g., Biodiversity, Climate, or Social Impact) tailored to the mining sector’s materiality.</p></li>
+</ul>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of <code>MineSDG</code> from <a href="https://github.com/imanojkumar/MineSDG" class="external-link">GitHub</a> like so:</p>
+<p>The stable version (v0.1.0) of <code>MineSDG</code> is available as a formal release. You can install it directly from <a href="https://github.com/imanojkumar/MineSDG/releases/tag/v0.1.0" target="_blank" class="external-link">GitHub</a> like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"imanojkumar/MineSDG@v0.1.0"</span><span class="op">)</span></span></code></pre></div>
+<p>For the latest development features (v0.2.0.9000), including the <code>Mining Risk Engine</code>, <code>Convergence Analysis</code>, and <code>Composite ESG Indexing</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"imanojkumar/MineSDG"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+<h2 id="quick-start-strategic-workflow">Quick Start: Strategic Workflow<a class="anchor" aria-label="anchor" href="#quick-start-strategic-workflow"></a>
 </h2>
-<p>This is a basic example of how the package will work (functions coming soon):</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<p><strong>MineSDG</strong> leverages open-access global data. No API keys are required for standard retrieval, allowing you to move from raw data to sector-specific intelligence in seconds:</p>
+<p>The following example demonstrates how to retrieve data, analyze trends, and generate a mining-specific risk profile:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/imanojkumar/MineSDG" class="external-link">MineSDG</a></span><span class="op">)</span></span>
-<span><span class="co"># calculate_water_efficiency(withdrawal_m3 = 50000, discharge_m3 = 10000, recycled_m3 = 20000)</span></span></code></pre></div>
+<span></span>
+<span><span class="co"># 1. Retrieve Global Data (e.g., Land Degradation / SDG 15.3.1)</span></span>
+<span><span class="co"># Accesses the official UN SDG API directly</span></span>
+<span><span class="va">dt</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/fetch_sdg_country_data.html">fetch_sdg_country_data</a></span><span class="op">(</span></span>
+<span>  indicator  <span class="op">=</span> <span class="st">"15.3.1"</span>,</span>
+<span>  country    <span class="op">=</span> <span class="st">"IND"</span>,</span>
+<span>  year_range <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2015</span>, <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 2. Generate Sector-Specific Risk Profile</span></span>
+<span><span class="co"># Integrates trend, volatility, and domain relevance</span></span>
+<span><span class="va">risk_profile</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/generate_mining_risk_profile.html">generate_mining_risk_profile</a></span><span class="op">(</span><span class="va">dt</span>, indicator <span class="op">=</span> <span class="st">"15.3.1"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 3. View Executive Summary</span></span>
+<span><span class="co"># Produces board-ready narrative interpretation</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">risk_profile</span><span class="op">$</span><span class="va">executive_summary</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 4. Visualize the Strategic Trend</span></span>
+<span><span class="fu"><a href="reference/plot_sdg_trend.html">plot_sdg_trend</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span></code></pre></div>
+<p><br><br></p>
+</div>
+<div class="section level2">
+<h2 id="citation--data-acknowledgement">Citation &amp; Data Acknowledgement<a class="anchor" aria-label="anchor" href="#citation--data-acknowledgement"></a>
+</h2>
+<p>If you use <strong>MineSDG</strong> in your research, ESG reports, or strategic reviews, please cite it as follows:</p>
+<div class="section level3">
+<h3 id="citation---apa-7th-edition">Citation - APA 7th Edition:<a class="anchor" aria-label="anchor" href="#citation---apa-7th-edition"></a>
+</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>Kumar, <span class="fu">M.</span> (<span class="dv">2026</span>). MineSDG<span class="sc">:</span> Strategic Analytics <span class="sc">&amp;</span> Sector Intelligence <span class="cf">for</span> Mining <span class="fu">Sustainability</span> (Version <span class="dv">0</span>.<span class="fl">1.0</span>) [R package]. GitHub. https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>imanojkumar<span class="sc">/</span>MineSDG</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="bibtex">BibTeX:<a class="anchor" aria-label="anchor" href="#bibtex"></a>
+</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="sc">@</span>Manual{,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  title <span class="ot">=</span> {MineSDG<span class="sc">:</span> Strategic Analytics <span class="sc">&amp;</span> Sector Intelligence <span class="cf">for</span> Mining Sustainability},</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>  author <span class="ot">=</span> {Manoj Kumar},</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  year <span class="ot">=</span> {<span class="dv">2026</span>},</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  note <span class="ot">=</span> {R package version <span class="dv">0</span>.<span class="fl">1.0</span>},</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>  url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>imanojkumar<span class="sc">/</span>MineSDG},</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="data-acknowledgement">Data Acknowledgement<a class="anchor" aria-label="anchor" href="#data-acknowledgement"></a>
+</h3>
+<p><strong>MineSDG</strong> acts as a client to the <strong>United Nations Sustainable Development Goals API</strong>. Users of this package are bound by the <a href="https://www.un.org/en/about-us/terms-of-use" target="_blank" class="external-link">United Nations Data Terms of Use</a>. We gratefully acknowledge the UN Statistics Division for maintaining the global SDG indicator database.</p>
+<p><br><br><br></p>
+</div>
 </div>
 </div>
 

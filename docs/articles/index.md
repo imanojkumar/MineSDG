@@ -2,5 +2,5 @@
 
 ### All vignettes
 
-- [MineSDG - SDG Analytics & Mining-Sector
+- [MineSDG - Strategic Analytics & Sector
   Intelligence](https://imanojkumar.github.io/MineSDG/articles/MineSDG-introduction.md):

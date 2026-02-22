@@ -1,8 +1,8 @@
 ---
-title: "MineSDG - SDG Analytics & Mining-Sector Intelligence"
+title: "MineSDG - Strategic Analytics & Sector Intelligence"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{MineSDG - SDG Analytics & Mining-Sector Intelligence}
+  %\VignetteIndexEntry{MineSDG - Strategic Analytics & Sector Intelligence}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

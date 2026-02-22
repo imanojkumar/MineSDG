@@ -34,7 +34,7 @@
 - [`plot_sdg_convergence()`](https://imanojkumar.github.io/MineSDG/reference/plot_sdg_convergence.md)
   : Plot SDG Convergence
 
-## Mining-Sector Intelligence
+## Mining Sector Intelligence
 
 - [`map_sdg_to_mining_domain()`](https://imanojkumar.github.io/MineSDG/reference/map_sdg_to_mining_domain.md)
   : Map SDG Indicator to Mining-Sector Domain

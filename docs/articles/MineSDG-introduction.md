@@ -1,4 +1,4 @@
-# MineSDG - SDG Analytics & Mining-Sector Intelligence
+# MineSDG - Strategic Analytics & Sector Intelligence
 
 ------------------------------------------------------------------------
 
